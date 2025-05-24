@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react'; //Do NOT DELETE! NECESSARY TO RUN!
 
 function App() {
   return (
