@@ -1,38 +1,100 @@
-.App {
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 2rem 3rem;
+  max-width: 400px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  color: #6b46c1; /* roxo */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header p {
+  color: #9f7aea;
+  margin-bottom: 2rem;
+  font-style: italic;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: #555;
+}
+
+.input-section input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.input-section input:focus {
+  border-color: #6b46c1;
+  outline: none;
+}
+
+.result-section {
+  margin-top: 2rem;
+}
+
+.result-section h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #553c9a;
+}
+
+.number-display {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #9f7aea;
+  background: #e9d8fd;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(107, 70, 193, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsivo simples */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1.5rem;
+    max-width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .number-display {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
   }
 }

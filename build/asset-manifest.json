@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "/numerology/static/css/main.435d5fe5.chunk.css",
-    "main.js": "/numerology/static/js/main.345cd754.chunk.js",
-    "main.js.map": "/numerology/static/js/main.345cd754.chunk.js.map",
-    "runtime~main.js": "/numerology/static/js/runtime~main.89f28f4f.js",
-    "runtime~main.js.map": "/numerology/static/js/runtime~main.89f28f4f.js.map",
-    "static/js/2.9e11b540.chunk.js": "/numerology/static/js/2.9e11b540.chunk.js",
-    "static/js/2.9e11b540.chunk.js.map": "/numerology/static/js/2.9e11b540.chunk.js.map",
-    "static/js/3.ba8b7f13.chunk.js": "/numerology/static/js/3.ba8b7f13.chunk.js",
-    "static/js/3.ba8b7f13.chunk.js.map": "/numerology/static/js/3.ba8b7f13.chunk.js.map",
+    "main.css": "/numerology/static/css/main.cddb5210.chunk.css",
+    "main.js": "/numerology/static/js/main.de46963d.chunk.js",
+    "main.js.map": "/numerology/static/js/main.de46963d.chunk.js.map",
+    "runtime-main.js": "/numerology/static/js/runtime-main.9b9c6302.js",
+    "runtime-main.js.map": "/numerology/static/js/runtime-main.9b9c6302.js.map",
+    "static/js/2.5059d4d3.chunk.js": "/numerology/static/js/2.5059d4d3.chunk.js",
+    "static/js/2.5059d4d3.chunk.js.map": "/numerology/static/js/2.5059d4d3.chunk.js.map",
+    "static/js/3.fb1fb9df.chunk.js": "/numerology/static/js/3.fb1fb9df.chunk.js",
+    "static/js/3.fb1fb9df.chunk.js.map": "/numerology/static/js/3.fb1fb9df.chunk.js.map",
     "index.html": "/numerology/index.html",
-    "precache-manifest.b369335d90ac3aa1c569779c1194f9d3.js": "/numerology/precache-manifest.b369335d90ac3aa1c569779c1194f9d3.js",
+    "precache-manifest.31337841e9c9229521bbe4604eb16a32.js": "/numerology/precache-manifest.31337841e9c9229521bbe4604eb16a32.js",
     "service-worker.js": "/numerology/service-worker.js",
-    "static/css/main.435d5fe5.chunk.css.map": "/numerology/static/css/main.435d5fe5.chunk.css.map",
-    "static/media/logo.svg": "/numerology/static/media/logo.06e73328.svg"
-  }
+    "static/css/main.cddb5210.chunk.css.map": "/numerology/static/css/main.cddb5210.chunk.css.map",
+    "static/js/2.5059d4d3.chunk.js.LICENSE.txt": "/numerology/static/js/2.5059d4d3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b9c6302.js",
+    "static/js/2.5059d4d3.chunk.js",
+    "static/css/main.cddb5210.chunk.css",
+    "static/js/main.de46963d.chunk.js"
+  ]
 }
