@@ -118,7 +118,10 @@ export default function App() {
       >
         {nomeCompleto ? (
           <div style={{ fontWeight: "bold", fontSize: 18, textAlign: "center" }}>
-            {calcularNumerosKarmicos(nomeCompleto).join(", ") || "Nenhum"}
+            {Array.isArray(calcularNumerosKarmicos(nomeCompleto)) 
+              ? calcularNumerosKarmicos(nomeCompleto).join(", ") 
+              : "Sem lições cármicas"
+            }
           </div>
         ) : (
           <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha o nome completo</p>

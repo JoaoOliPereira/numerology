@@ -100,20 +100,52 @@ export function calcularAnoPessoal(data) {
   return reduzir(soma);
 }
 
-// Lições Cármicas: números 13, 14, 16, 19 que não aparecem no nome = lições
+// Lições Cármicas: números de 1 a 9 que não aparecem no nome
 export function calcularLicoesCarmicas(nome) {
-  if (!nome) return [];
   const numeros = nomeParaNumeros(nome);
   const presentes = new Set(numeros);
-  const karmicos = [13, 14, 16, 19];
-  return karmicos.filter((num) => !presentes.has(num));
+  const todos = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  return todos.filter((n) => !presentes.has(n));
 }
 
-// Números Kármicos: números 13, 14, 16, 19 que aparecem no nome
+// Números kármicos reconhecidos
+const numerosKarmicos = [13, 14, 16, 19];
+
+// Soma os números de um nome e verifica se algum desses aparece
 export function calcularNumerosKarmicos(nome) {
-  if (!nome) return [];
-  const numeros = nomeParaNumeros(nome);
-  const presentes = new Set(numeros);
-  const karmicos = [13, 14, 16, 19];
-  return karmicos.filter((num) => presentes.has(num));
+  const nomeLimpo = nome.toUpperCase().replace(/[^A-Z]/g, "");
+
+  const soma = nomeLimpo.split("").reduce((acc, letra) => {
+    const valor = tabelaNumeros[letra] || 0;
+    return acc + valor;
+  }, 0);
+
+  // Salva valor antes de reduzir
+  const numeroAntesDeReduzir = soma;
+
+  // Reduz o número até obter 1–9 (exceto 11/22/33 se quiser manter mestres)
+  const reduzir = (n) => {
+    while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
+      n = n
+        .toString()
+        .split("")
+        .reduce((acc, digit) => acc + parseInt(digit), 0);
+    }
+    return n;
+  };
+
+  const numeroFinal = reduzir(soma);
+
+  // Se a soma original for um número kármico, devolve essa informação
+  if (numerosKarmicos.includes(numeroAntesDeReduzir)) {
+    return {
+      numeroFinal,
+      karmico: numeroAntesDeReduzir,
+    };
+  }
+
+  return {
+    numeroFinal,
+    karmico: null,
+  };
 }
