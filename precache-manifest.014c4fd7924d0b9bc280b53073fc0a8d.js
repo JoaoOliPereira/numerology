@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c767654b711b7d1a7960613ec3656de4",
+    "revision": "fc44abd0c426281e9c55e298bb582d25",
     "url": "/numerology/index.html"
   },
   {
-    "revision": "72f7756a37a9c2a2f1f4",
+    "revision": "5e1496d096c885f81475",
     "url": "/numerology/static/css/main.cddb5210.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/numerology/static/js/3.fb1fb9df.chunk.js"
   },
   {
-    "revision": "72f7756a37a9c2a2f1f4",
-    "url": "/numerology/static/js/main.de46963d.chunk.js"
+    "revision": "5e1496d096c885f81475",
+    "url": "/numerology/static/js/main.6f7afb28.chunk.js"
   },
   {
     "revision": "8a12c634228fff0d00f6",
