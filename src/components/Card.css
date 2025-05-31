@@ -32,9 +32,10 @@
   opacity: 0.85;
 }
 
+/*card content - card text inside card results*/
 .card-content {
   font-weight: 600;
   font-size: 1.2rem;
-  color: #f0e6ff;
+  color: #000000;
   text-align: center;
 }

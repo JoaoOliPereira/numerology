@@ -25,7 +25,7 @@ describe("calcularNumerosKarmicos", () => {
     expect(resultado.numeroFinal).toBe(4); // 1 + 3 = 4
   });
 
-test("detecta número kármico 14", () => {
+  test("detecta número kármico 14", () => {
     const nome = "AENC"; // 1+5+5+3 = 14 (A+E+N+C) = 1+5+5+3
     const resultado = calcularNumerosKarmicos(nome);
     expect(resultado.karmico).toBe(14);
