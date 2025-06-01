@@ -11,6 +11,7 @@ import {
 } from "./utils/numerologyUtils";
 import { getAllDetailedExplanations } from "./utils/explanations";
 import './App.css';
+import emailjs from 'emailjs-com';
 
 export default function App() {
   const [dataNascimento, setDataNascimento] = useState("");
@@ -88,6 +89,51 @@ export default function App() {
     </div>
   );
 
+  const enviarEmail = async () => {
+    if (!email) {
+      alert("Por favor, insira seu email.");
+      return;
+    }
+    if (!nomeCompleto || !dataNascimento) {
+      alert("Por favor, preencha seu nome completo e data de nascimento.");
+      return;
+    }
+
+    // Pegando todas as explicações detalhadas
+    const explicacoes = getAllDetailedExplanations({
+      name: nomeCompleto,
+      birthDate: dataNascimento,
+    });
+
+    // Construindo a mensagem concatenando todos os conteúdos detalhados
+    const textoExplicacoes = explicacoes
+      .map((exp) => `Título: ${exp.title}\nExplicação: ${exp.deep}\n`)
+      .join("\n--------------------\n");
+
+    const emailData = {
+      to: email,
+      subject: "Numerologia",
+      message: `Nome Completo: ${nomeCompleto}\nData de Nascimento: ${dataNascimento}\n\nExplicações:\n${textoExplicacoes}`,
+    };
+
+    try {
+      const response = await fetch("https://seu-backend.com/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(emailData),
+      });
+
+      if (response.ok) {
+        alert("Email enviado com sucesso!");
+        setEmail("");
+      } else {
+        const error = await response.json();
+        alert("Erro ao enviar email: " + (error.message || "Erro desconhecido"));
+      }
+    } catch (error) {
+      alert("Erro na conexão com o servidor.");
+    }
+  };
 
   return (
     <div className="background">
@@ -186,10 +232,10 @@ export default function App() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Seu nome completo"
+              placeholder="Coloque aqui o seu Email:"
               style={{ width: "100%", padding: 8, borderRadius: 6, border: "1px solid #ccc" }}
               />
-            <button type="submit">Enviar Informações</button>
+            <button type="submit" onClick={enviarEmail}>Enviar Informações</button>
           </Card>
           
           <Modal
