@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2bb299dbbd18c9334425592bcf8aee89",
+    "revision": "b72710074231bd8d794e45a275f8fef1",
     "url": "/numerology/index.html"
   },
   {
-    "revision": "bc89768d96ba2cfdace2",
+    "revision": "ca859b5f37414de3522f",
     "url": "/numerology/static/css/main.5f926f24.chunk.css"
   },
   {
-    "revision": "ef6f963d125545e5b947",
-    "url": "/numerology/static/js/2.1adf3e41.chunk.js"
+    "revision": "9a94886d0c5191319583",
+    "url": "/numerology/static/js/2.b0256ae4.chunk.js"
   },
   {
     "revision": "fc0ba07c0f771d66c44444381376eaf8",
-    "url": "/numerology/static/js/2.1adf3e41.chunk.js.LICENSE.txt"
+    "url": "/numerology/static/js/2.b0256ae4.chunk.js.LICENSE.txt"
   },
   {
     "revision": "463970b08b129e02261f",
     "url": "/numerology/static/js/3.c201ea2a.chunk.js"
   },
   {
-    "revision": "bc89768d96ba2cfdace2",
-    "url": "/numerology/static/js/main.be61f343.chunk.js"
+    "revision": "ca859b5f37414de3522f",
+    "url": "/numerology/static/js/main.90ca19c8.chunk.js"
   },
   {
     "revision": "6f2158e8fefa175365b9",
