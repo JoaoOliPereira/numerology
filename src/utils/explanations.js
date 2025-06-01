@@ -160,41 +160,45 @@ export function getAllDetailedExplanations({ name, birthDate }) {
   const licoesCarmicas = calcularLicoesCarmicas(name);
   const { karmico } = calcularNumerosKarmicos(name);
 
-  const explicacaoOuPadrao = (tipo, numero) => {
-    if (numero == null) return "Sem valor disponível.";
-    return explanations[tipo] && explanations[tipo][numero]
-      ? explanations[tipo][numero]
-      : `Sem explicação para ${tipo} ${numero}`;
-  };
+  const buildExplicacao = (tipo, numero) => ({
+    simple: explanations?.[tipo]?.simple?.[numero] ?? `Sem explicação para ${tipo} ${numero}`,
+    deep: explanations?.[tipo]?.deep?.[numero] ?? `Sem explicação profunda para ${tipo} ${numero}`
+  });
 
   return [
     {
       title: "Número de Vida",
-      explanation: explicacaoOuPadrao("vida", numeroVida),
+      ...buildExplicacao("Número de Vida", numeroVida)
     },
     {
       title: "Número da Alma",
-      explanation: explicacaoOuPadrao("alma", numeroAlma),
+      ...buildExplicacao("Número da Alma", numeroAlma)
     },
     {
       title: "Número da Personalidade",
-      explanation: explicacaoOuPadrao("personalidade", numeroPersonalidade),
+      ...buildExplicacao("Número da Personalidade", numeroPersonalidade)
     },
     {
       title: "Ano Pessoal",
-      explanation: explicacaoOuPadrao("anoPessoal", anoPessoal),
+      ...buildExplicacao("Ano Pessoal", anoPessoal)
     },
     {
       title: "Lições Cármicas",
-      explanation: licoesCarmicas.length
-        ? licoesCarmicas.map(n => explicacaoOuPadrao("licoes", n)).join("\n\n")
+      simple: licoesCarmicas.length
+        ? licoesCarmicas.map(n => explanations["Lições Cármicas"].simple?.[n] ?? `Sem explicação para lição ${n}`).join("\n\n")
         : "Não tens Lições Cármicas nesta encarnação.",
+      deep: licoesCarmicas.length
+        ? licoesCarmicas.map(n => explanations["Lições Cármicas"].deep?.[n] ?? `Sem explicação profunda para lição ${n}`).join("\n\n")
+        : "Não tens Lições Cármicas nesta encarnação."
     },
     {
       title: "Número Kármico",
-      explanation: karmico
-        ? `Tens um número kármico importante: ${karmico}\n\n${explicacaoOuPadrao("karmicos", karmico)}`
+      simple: karmico
+        ? `Tens um número kármico importante: ${karmico}\n\n${explanations["Números Kármicos"].simple?.[karmico] ?? "Sem explicação simples."}`
         : "Não tens números kármicos no teu nome.",
-    },
+      deep: karmico
+        ? `Tens um número kármico importante: ${karmico}\n\n${explanations["Números Kármicos"].deep?.[karmico] ?? "Sem explicação profunda."}`
+        : "Não tens números kármicos no teu nome."
+    }
   ];
 }

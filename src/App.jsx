@@ -17,8 +17,20 @@ export default function App() {
   const [nomeCompleto, setNomeCompleto] = useState("");
   const [modalInfo, setModalInfo] = useState({ open: false, title: "", content: "" });
   const [email, setEmail] = useState("");
+  const [modoDetalhado, setModoDetalhado] = useState(false);
+  
+  const alternarModoExplicacao = () => {
+    const novoModo = !modoDetalhado;
+    setModoDetalhado(novoModo);
 
-  const mostrarExplicacao = (titulo) => {
+    // Atualiza o conteúdo do modal com o novo modo
+    setModalInfo((prev) => ({
+      ...prev,
+      content: novoModo ? prev.deep : prev.simple,
+    }));
+  };
+
+  const mostrarExplicacao = (titulo, valor) => {
     if (!dataNascimento && !nomeCompleto) return;
 
     const explicacoes = getAllDetailedExplanations({
@@ -30,28 +42,52 @@ export default function App() {
     if (selecionado) {
       setModalInfo({
         open: true,
-        title: selecionado.title,
-        content: selecionado.explanation,
+        title: `${selecionado.title} - ${valor}`,
+        content: modoDetalhado ? selecionado.deep : selecionado.simple,
+        simple: selecionado.simple,
+        deep: selecionado.deep
       });
     }
   };
 
   const renderValor = (valor) => (
-    <div
-      onClick={() => mostrarExplicacao(valor.title)}
-      style={{
-        fontWeight: "bold",
-        fontSize: 20,
-        textAlign: "center",
-        cursor: "pointer",
-        padding: 8,
-        borderRadius: 6,
-        background: "#ffffff",
-      }}
-    >
-      {valor.value}
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 8,
+      fontWeight: "bold",
+      fontSize: 20,
+      textAlign: "center",
+      cursor: "default",
+      padding: 8,
+      borderRadius: 6,
+      background: "#ffffff"
+    }}>
+      <span>{valor.value}</span>
+      <span
+        onClick={() => mostrarExplicacao(valor.title, valor.value)}
+        style={{
+          cursor: "pointer",
+          fontSize: 18,
+          color: "#6c63ff", // tom de roxo
+          border: "1px solid #6c63ff",
+          borderRadius: "50%",
+          width: 22,
+          height: 22,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: "bold",
+          userSelect: "none"
+        }}
+        title="Ver explicação"
+      >
+        i
+      </span>
     </div>
   );
+
 
   return (
     <div className="background">
@@ -158,11 +194,15 @@ export default function App() {
           
           <Modal
             open={modalInfo.open}
-            onClose={() => setModalInfo({ ...modalInfo, open: false })}
             title={modalInfo.title}
-          >
-            <p>{modalInfo.content}</p>
-          </Modal>
+            content={modalInfo.content}
+            onClose={() => setModalInfo({ open: false, title: "", content: "" })}
+            extraButton={{
+              label: modoDetalhado ? "Ver Explicação Simples" : "Ver Explicação Detalhada",
+              onClick: alternarModoExplicacao
+            }}
+          />
+
         </div>
         <footer className="footer">
           <p className="footerText">© 2025 Numerologia. Todos os direitos reservados. Este site é apenas para fins informativos e de entretenimento.</p>
