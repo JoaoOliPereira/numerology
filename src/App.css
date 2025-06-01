@@ -5,15 +5,17 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  margin: 0;
 }
 
 .background {
   position: relative;
   background: transparent url('stars.png') repeat;
-  overflow: hidden;
+  overflow-x: hidden;
   min-height: 100vh;
   padding-bottom: 2rem;
   z-index: 0;
+  width: 100%;
 }
 
 .footer {
@@ -35,28 +37,29 @@ body {
   gap: 0.5rem;
 }
 
-.headerText{
+.headerText {
   color: white;
 }
 
-.footerText{
-  color:white;
+.footerText {
+  color: white;
 }
 
 .container {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem 3rem;
   max-width: 100%;
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 header h1 {
   font-size: 2rem;
   margin-bottom: 0.3rem;
-  color: #6b46c1; /* roxo */
+  color: #6b46c1;
 }
 
 header p {
@@ -112,11 +115,27 @@ header p {
   box-shadow: 0 4px 15px rgba(107, 70, 193, 0.4);
 }
 
-/* Responsivo simples */
-@media (max-width: 480px) {
+/* Responsivo geral */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
   .container {
-    padding: 1.5rem 1.5rem;
-    max-width: 100%;
+    padding: 1rem 1.2rem;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .header h2 {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 1rem;
   }
 
   .number-display {
@@ -124,28 +143,34 @@ header p {
     height: 100px;
     font-size: 3rem;
   }
-
-  .header{
-    padding: 1.5rem 1.5rem;
-    max-width: 100%;
-  }
 }
 
-@media (max-width: 600px) {
+/* Estilos para telas muito pequenas (telemóveis pequenos) */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
   .header {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
   }
 
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
-  .header p {
-    font-size: 0.95rem;
+  .header h2 {
+    font-size: 1rem;
+  }
+
+  .number-display {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
   }
 
   .footer {
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 1rem;
   }
 }

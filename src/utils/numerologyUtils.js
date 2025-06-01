@@ -149,3 +149,36 @@ export function calcularNumerosKarmicos(nome) {
     karmico: null,
   };
 }
+
+export function gerarNumeroDoDia(numeroBase) {
+  const hoje = new Date();
+  const somaData =
+    hoje.getDate() + (hoje.getMonth() + 1) + hoje.getFullYear();
+  const total = numeroBase + somaData;
+
+  // Reduzir a um número entre 1 e 9
+  return reduzirNumero(total);
+}
+
+function reduzirNumero(num) {
+  while (num > 9) {
+    num = num
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((a, b) => a + b, 0);
+  }
+  return num;
+}
+
+export const dicasNumerologia = {
+  1: "Hoje é um bom dia para tomar iniciativa e começar algo novo.",
+  2: "Cultive a harmonia nos relacionamentos e evite conflitos desnecessários.",
+  3: "Expresse sua criatividade! Escreva, cante, fale — inspire o mundo.",
+  4: "Organize as suas tarefas e foque em construir bases sólidas.",
+  5: "Seja flexível! Mudanças podem trazer oportunidades.",
+  6: "Dedique-se à família, amigos ou a algo que você ama profundamente.",
+  7: "Busque silêncio interior. Medite ou reflita sobre algo importante.",
+  8: "Foque em metas e finanças. Aproveite a sua energia para conquistar.",
+  9: "Pratique generosidade. Doe algo — nem que seja um sorriso.",
+};

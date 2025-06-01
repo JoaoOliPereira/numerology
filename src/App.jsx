@@ -8,6 +8,7 @@ import {
   calcularAnoPessoal,
   calcularLicoesCarmicas,
   calcularNumerosKarmicos,
+  gerarNumeroDoDia,dicasNumerologia
 } from "./utils/numerologyUtils";
 import { getAllDetailedExplanations } from "./utils/explanations";
 import './App.css';
@@ -145,11 +146,13 @@ export default function App() {
       </header>
         <div
           style={{
-            maxWidth: "960px",
+            maxWidth: "100%",
             margin: "2rem auto",
+            padding: "0 1rem",
             display: "grid",
             gap: "1.5rem",
-            gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            boxSizing: "border-box"
           }}
         >
           <Card title="Informações Pessoais" description="Digite seus dados para calcular os números">
@@ -222,7 +225,25 @@ export default function App() {
                 })()
               : <p style={{ opacity: 1, textAlign: "center" }}>Preencha o nome completo</p>}
           </Card>
-          
+
+            {nomeCompleto && dataNascimento && (
+            <Card title="🔮 Dica do Dia" description="Orientação numerológica para hoje">
+              {(() => {
+                const numeroVida = calcularNumeroDeVida(dataNascimento);
+                const numeroDia = gerarNumeroDoDia(numeroVida);
+                const dica = dicasNumerologia[numeroDia];
+
+                return (
+                  <div style={{ textAlign: "center", fontStyle: "italic", padding: "1rem" }}>
+                    <p style={{ fontSize: 20,color:"white" }}>Número do Dia: <strong>{numeroDia}</strong></p>
+                    <p style={{ marginTop: 8,color:"white" }}>{dica}</p>
+                  </div>
+                );
+              })()}
+            </Card>
+          )}
+
+          {/** 
           <Card title="Email" description="Coloque o seu email para receber o relatório completo.">
             <label htmlFor="email" style={{ display: "block", marginTop: 12, marginBottom: 8 }}>
               Email:
@@ -237,7 +258,8 @@ export default function App() {
               />
             <button type="submit" onClick={enviarEmail}>Enviar Informações</button>
           </Card>
-          
+          */}
+
           <Modal
             open={modalInfo.open}
             title={modalInfo.title}
