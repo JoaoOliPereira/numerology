@@ -172,13 +172,26 @@ function reduzirNumero(num) {
 }
 
 export const dicasNumerologia = {
-  1: "Hoje é um bom dia para tomar iniciativa e começar algo novo.",
-  2: "Cultive a harmonia nos relacionamentos e evite conflitos desnecessários.",
-  3: "Expresse sua criatividade! Escreva, cante, fale — inspire o mundo.",
-  4: "Organize as suas tarefas e foque em construir bases sólidas.",
-  5: "Seja flexível! Mudanças podem trazer oportunidades.",
-  6: "Dedique-se à família, amigos ou a algo que você ama profundamente.",
-  7: "Busque silêncio interior. Medite ou reflita sobre algo importante.",
-  8: "Foque em metas e finanças. Aproveite a sua energia para conquistar.",
-  9: "Pratique generosidade. Doe algo — nem que seja um sorriso.",
+  pt: {
+    1: "Hoje é um bom dia para tomar iniciativa e começar algo novo.",
+    2: "Cultive a harmonia nos relacionamentos e evite conflitos desnecessários.",
+    3: "Expresse sua criatividade! Escreva, cante, fale — inspire o mundo.",
+    4: "Organize as suas tarefas e foque em construir bases sólidas.",
+    5: "Seja flexível! Mudanças podem trazer oportunidades.",
+    6: "Dedique-se à família, amigos ou a algo que você ama profundamente.",
+    7: "Busque silêncio interior. Medite ou reflita sobre algo importante.",
+    8: "Foque em metas e finanças. Aproveite a sua energia para conquistar.",
+    9: "Pratique generosidade. Doe algo — nem que seja um sorriso.",
+  },
+  en: {
+    1: "Today is a great day to take initiative and start something new.",
+    2: "Cultivate harmony in your relationships and avoid unnecessary conflicts.",
+    3: "Express your creativity! Write, sing, speak — inspire the world.",
+    4: "Organize your tasks and focus on building a solid foundation.",
+    5: "Be flexible! Changes may bring great opportunities.",
+    6: "Dedicate time to loved ones or something you deeply care about.",
+    7: "Seek inner peace. Meditate or reflect on something meaningful.",
+    8: "Focus on goals and finances. Use your energy to achieve.",
+    9: "Practice generosity. Give something — even if it's just a smile.",
+  }
 };

@@ -12,15 +12,19 @@ import {
 } from "./utils/numerologyUtils";
 import { getAllDetailedExplanations } from "./utils/explanations";
 import './App.css';
-import emailjs from 'emailjs-com';
+import { translations } from "./utils/translations";
+import ptFlag from './ptflag.png';
+import enFlag from './enflag.png';
 
 export default function App() {
   const [dataNascimento, setDataNascimento] = useState("");
   const [nomeCompleto, setNomeCompleto] = useState("");
   const [modalInfo, setModalInfo] = useState({ open: false, title: "", content: "" });
-  const [email, setEmail] = useState("");
   const [modoDetalhado, setModoDetalhado] = useState(false);
   
+  const [idioma, changeLanguage] = useState('pt');
+  const translation = (key) => translations[idioma][key] || key;
+
   const alternarModoExplicacao = () => {
     const novoModo = !modoDetalhado;
     setModoDetalhado(novoModo);
@@ -32,25 +36,26 @@ export default function App() {
     }));
   };
 
-  const mostrarExplicacao = (titulo, valor) => {
-    if (!dataNascimento && !nomeCompleto) return;
+ const mostrarExplicacao = (id, valor) => {
+  if (!dataNascimento && !nomeCompleto) return;
+  const explicacoes = getAllDetailedExplanations({
+    name: nomeCompleto,
+    birthDate: dataNascimento,
+    language: idioma
+  });
 
-    const explicacoes = getAllDetailedExplanations({
-      name: nomeCompleto,
-      birthDate: dataNascimento,
+  const selecionado = explicacoes.find((e) => e.id === id);
+  if (selecionado) {
+    setModalInfo({
+      open: true,
+      title: `${translation(id)} - ${valor}`,
+      content: modoDetalhado ? selecionado.deep : selecionado.simple,
+      simple: selecionado.simple,
+      deep: selecionado.deep
     });
+  }
+};
 
-    const selecionado = explicacoes.find((e) => e.title === titulo);
-    if (selecionado) {
-      setModalInfo({
-        open: true,
-        title: `${selecionado.title} - ${valor}`,
-        content: modoDetalhado ? selecionado.deep : selecionado.simple,
-        simple: selecionado.simple,
-        deep: selecionado.deep
-      });
-    }
-  };
 
   const renderValor = (valor) => (
     <div style={{
@@ -68,7 +73,7 @@ export default function App() {
     }}>
       <span>{valor.value}</span>
       <span
-        onClick={() => mostrarExplicacao(valor.title, valor.value)}
+        onClick={() => mostrarExplicacao(valor.id, valor.value)}
         style={{
           cursor: "pointer",
           fontSize: 18,
@@ -90,58 +95,40 @@ export default function App() {
     </div>
   );
 
-  const enviarEmail = async () => {
-    if (!email) {
-      alert("Por favor, insira seu email.");
-      return;
-    }
-    if (!nomeCompleto || !dataNascimento) {
-      alert("Por favor, preencha seu nome completo e data de nascimento.");
-      return;
-    }
-
-    // Pegando todas as explicações detalhadas
-    const explicacoes = getAllDetailedExplanations({
-      name: nomeCompleto,
-      birthDate: dataNascimento,
-    });
-
-    // Construindo a mensagem concatenando todos os conteúdos detalhados
-    const textoExplicacoes = explicacoes
-      .map((exp) => `Título: ${exp.title}\nExplicação: ${exp.deep}\n`)
-      .join("\n--------------------\n");
-
-    const emailData = {
-      to: email,
-      subject: "Numerologia",
-      message: `Nome Completo: ${nomeCompleto}\nData de Nascimento: ${dataNascimento}\n\nExplicações:\n${textoExplicacoes}`,
-    };
-
-    try {
-      const response = await fetch("https://seu-backend.com/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(emailData),
-      });
-
-      if (response.ok) {
-        alert("Email enviado com sucesso!");
-        setEmail("");
-      } else {
-        const error = await response.json();
-        alert("Erro ao enviar email: " + (error.message || "Erro desconhecido"));
-      }
-    } catch (error) {
-      alert("Erro na conexão com o servidor.");
-    }
-  };
-
   return (
     <div className="background">
       <header className="header">
-        <div>
-          <h1 className="headerText">🔢Numerologia</h1>
-          <h2 className="headerText">🔮 Descubra os mistérios ocultos nos números do seu nome e nascimento 🔮</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h1 className="headerText">{translation('title')}</h1>
+            <h2 className="headerText">{translation('subtitle')}</h2>
+          </div>
+          <div style={{ display: 'flex', gap: 10 }}>
+            <img
+              src={ptFlag}
+              alt="Português"
+              onClick={() => changeLanguage('pt')}
+              style={{
+                width: 28,
+                height: 20,
+                cursor: 'pointer',
+                border: idioma === 'pt' ? '2px solid #fff' : '1px solid #ccc',
+                borderRadius: 6
+              }}
+            />
+            <img
+              src={enFlag}
+              alt="English"
+              onClick={() => changeLanguage('en')}
+              style={{
+                width: 28,
+                height: 20,
+                cursor: 'pointer',
+                border: idioma === 'en' ? '2px solid #fff' : '1px solid #ccc',
+                borderRadius: 4
+              }}
+            />
+          </div>
         </div>
       </header>
         <div
@@ -155,9 +142,9 @@ export default function App() {
             boxSizing: "border-box"
           }}
         >
-          <Card title="Informações Pessoais" description="Digite seus dados para calcular os números">
+          <Card title={translation("personalInfo")} description={translation("enterData")}>
             <label htmlFor="dataNascimento" style={{ display: "block", marginBottom: 8 }}>
-              Data de Nascimento:
+              {translation("birthdate")}
             </label>
             <input
               type="date"
@@ -167,75 +154,77 @@ export default function App() {
               style={{ width: "100%", padding: 8, borderRadius: 6, border: "1px solid #ccc" }}
             />
 
-            <label htmlFor="nomeCompleto" style={{ display: "block", marginTop: 12, marginBottom: 8 }}>
-              Nome Completo:
+            <label htmlFor={translation("fullName")} style={{ display: "block", marginTop: 12, marginBottom: 8 }}>
+              {translation("fullName")}
             </label>
             <input
               type="text"
               id="nomeCompleto"
               value={nomeCompleto}
               onChange={(e) => setNomeCompleto(e.target.value)}
-              placeholder="Seu nome completo"
+              placeholder={translation("fullNameDesc")}
               style={{ width: "100%", padding: 8, borderRadius: 6, border: "1px solid #ccc" }}
             />
           </Card>
 
           {/* Cada Card passa valor.title para o click */}
-          <Card title="Número de Vida" description="Baseado na sua data de nascimento">
+          <Card title={translation("lifeNumber")} description={translation("lifeNumberDesc")}>
             {dataNascimento
-              ? renderValor({ title: "Número de Vida", value: calcularNumeroDeVida(dataNascimento) })
-              : <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha a data de nascimento</p>}
+              ? renderValor({id: "lifeNumber", title: translation("lifeNumber"), value: calcularNumeroDeVida(dataNascimento) })
+              : <p style={{ opacity: 0.7, textAlign: "center" }}>{translation("fillBirthdate")}</p>}
           </Card>
 
-          <Card title="Número da Personalidade" description="Características externas (consoantes)">
+          <Card title={translation("personalityNumber")} description={translation("personalityNumberDesc")}>
             {nomeCompleto
-              ? renderValor({ title: "Número da Personalidade", value: calcularNumeroDaPersonalidade(nomeCompleto) })
-              : <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha o nome completo</p>}
+              ? renderValor({ id: "personalityNumber",title: translation("personalityNumber"), value: calcularNumeroDaPersonalidade(nomeCompleto) })
+              : <p style={{ opacity: 0.7, textAlign: "center" }}>{translation("fillName")}</p>}
           </Card>
 
-          <Card title="Número da Alma" description="Motivações internas (vogais)">
+          <Card title={translation("soulNumber")} description={translation("soulNumberDesc")}>
             {nomeCompleto
-              ? renderValor({ title: "Número da Alma", value: calcularNumeroDaAlma(nomeCompleto) })
-              : <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha o nome completo</p>}
+              ? renderValor({ id: "soulNumber", title: translation("soulNumber"), value: calcularNumeroDaAlma(nomeCompleto) })
+              : <p style={{ opacity: 0.7, textAlign: "center" }}>{translation("fillName")}</p>}
           </Card>
 
-          <Card title="Ano Pessoal" description="Ciclo pessoal atual">
+          <Card title={translation("personalYear")} description={translation("personalYearDesc")}>
             {dataNascimento
-              ? renderValor({ title: "Ano Pessoal", value: calcularAnoPessoal(dataNascimento) })
-              : <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha a data de nascimento</p>}
+              ? renderValor({id:"personalYear", title: "Ano Pessoal", value: calcularAnoPessoal(dataNascimento) })
+              : <p style={{ opacity: 0.7, textAlign: "center" }}>{translation("fillBirthdate")}</p>}
           </Card>
 
-          <Card title="Lições Cármicas" description="Lições a aprender nesta vida">
+          <Card title={translation("karmicLessons")} description={translation("karmicLessonsDesc")}>
             {nomeCompleto
               ? renderValor({
-                  title: "Lições Cármicas",
+                  id: "karmicLessons",
+                  title: translation("karmicLessons"),
                   value: calcularLicoesCarmicas(nomeCompleto).join(", ") || "Nenhuma",
                 })
-              : <p style={{ opacity: 0.7, textAlign: "center" }}>Preencha o nome completo</p>}
+              : <p style={{ opacity: 0.7, textAlign: "center" }}>{translation("fillName")}</p>}
           </Card>
 
-          <Card title="Número Kármico" description="Desafios espirituais (caso existam)">
+          <Card title={translation("karmicNumber")} description={translation("karmicNumberDesc")}>
             {nomeCompleto
               ? (() => {
                   const { karmico } = calcularNumerosKarmicos(nomeCompleto);
                   return renderValor({
-                    title: "Número Kármico",
-                    value: karmico || "Nenhum",
+                    id: "karmicNumber",
+                    title: translation("karmicNumber"),
+                    value: karmico || translation("noKarmic"),
                   });
                 })()
-              : <p style={{ opacity: 1, textAlign: "center" }}>Preencha o nome completo</p>}
+              : <p style={{ opacity: 1, textAlign: "center" }}>{translation("fillName")}</p>}
           </Card>
 
             {nomeCompleto && dataNascimento && (
-            <Card title="🔮 Dica do Dia" description="Orientação numerológica para hoje">
+            <Card title={translation("dailyTip")} description={translation("dayNumber")}>
               {(() => {
                 const numeroVida = calcularNumeroDeVida(dataNascimento);
                 const numeroDia = gerarNumeroDoDia(numeroVida);
-                const dica = dicasNumerologia[numeroDia];
+                const dica = dicasNumerologia[idioma]?.[numeroDia] ?? "";
 
                 return (
                   <div style={{ textAlign: "center", fontStyle: "italic", padding: "1rem" }}>
-                    <p style={{ fontSize: 20,color:"white" }}>Número do Dia: <strong>{numeroDia}</strong></p>
+                    <p style={{ fontSize: 20,color:"white" }}>{translation("dayNumber")}: <strong>{numeroDia}</strong></p>
                     <p style={{ marginTop: 8,color:"white" }}>{dica}</p>
                   </div>
                 );
@@ -243,37 +232,20 @@ export default function App() {
             </Card>
           )}
 
-          {/** 
-          <Card title="Email" description="Coloque o seu email para receber o relatório completo.">
-            <label htmlFor="email" style={{ display: "block", marginTop: 12, marginBottom: 8 }}>
-              Email:
-            </label>
-            <input
-              type="text"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Coloque aqui o seu Email:"
-              style={{ width: "100%", padding: 8, borderRadius: 6, border: "1px solid #ccc" }}
-              />
-            <button type="submit" onClick={enviarEmail}>Enviar Informações</button>
-          </Card>
-          */}
-
           <Modal
             open={modalInfo.open}
             title={modalInfo.title}
             content={modalInfo.content}
             onClose={() => setModalInfo({ open: false, title: "", content: "" })}
             extraButton={{
-              label: modoDetalhado ? "Ver Explicação Simples" : "Ver Explicação Detalhada",
+              label: modoDetalhado ? translation("seeSimple") : translation("seeDetailed"),
               onClick: alternarModoExplicacao
             }}
           />
 
         </div>
         <footer className="footer">
-          <p className="footerText">© 2025 Numerologia. Todos os direitos reservados. Este site é apenas para fins informativos e de entretenimento.</p>
+          <p className="footerText">{translation("footer")}</p>
         </footer>
     </div>
   );
