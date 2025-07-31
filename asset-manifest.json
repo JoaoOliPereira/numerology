@@ -1,18 +1,20 @@
 {
   "files": {
     "main.css": "/numerology/static/css/main.a0090267.chunk.css",
-    "main.js": "/numerology/static/js/main.5fa0feb2.chunk.js",
-    "main.js.map": "/numerology/static/js/main.5fa0feb2.chunk.js.map",
-    "runtime~main.js": "/numerology/static/js/runtime~main.89c51c03.js",
-    "runtime~main.js.map": "/numerology/static/js/runtime~main.89c51c03.js.map",
-    "static/js/2.33f35dd1.chunk.js": "/numerology/static/js/2.33f35dd1.chunk.js",
-    "static/js/2.33f35dd1.chunk.js.map": "/numerology/static/js/2.33f35dd1.chunk.js.map",
-    "static/js/3.177faaa1.chunk.js": "/numerology/static/js/3.177faaa1.chunk.js",
-    "static/js/3.177faaa1.chunk.js.map": "/numerology/static/js/3.177faaa1.chunk.js.map",
+    "main.js": "/numerology/static/js/main.e962f3c9.chunk.js",
+    "main.js.map": "/numerology/static/js/main.e962f3c9.chunk.js.map",
+    "runtime~main.js": "/numerology/static/js/runtime~main.8f780c8f.js",
+    "runtime~main.js.map": "/numerology/static/js/runtime~main.8f780c8f.js.map",
+    "static/js/2.f77c50b8.chunk.js": "/numerology/static/js/2.f77c50b8.chunk.js",
+    "static/js/2.f77c50b8.chunk.js.map": "/numerology/static/js/2.f77c50b8.chunk.js.map",
+    "static/js/3.31c88699.chunk.js": "/numerology/static/js/3.31c88699.chunk.js",
+    "static/js/3.31c88699.chunk.js.map": "/numerology/static/js/3.31c88699.chunk.js.map",
     "index.html": "/numerology/index.html",
-    "precache-manifest.3fe92b91612c0a629d7ad6aeaa37a23b.js": "/numerology/precache-manifest.3fe92b91612c0a629d7ad6aeaa37a23b.js",
+    "precache-manifest.48a56f41a91bccc2fae3bfb9011b9212.js": "/numerology/precache-manifest.48a56f41a91bccc2fae3bfb9011b9212.js",
     "service-worker.js": "/numerology/service-worker.js",
     "static/css/main.a0090267.chunk.css.map": "/numerology/static/css/main.a0090267.chunk.css.map",
+    "static/media/enflag.png": "/numerology/static/media/enflag.37560245.png",
+    "static/media/ptflag.png": "/numerology/static/media/ptflag.90128122.png",
     "static/media/App.css": "/numerology/static/media/stars.b34f483f.png"
   }
 }
