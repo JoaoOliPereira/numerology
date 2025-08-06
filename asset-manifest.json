@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/numerology/static/css/main.a0090267.chunk.css",
-    "main.js": "/numerology/static/js/main.8d43791b.chunk.js",
-    "main.js.map": "/numerology/static/js/main.8d43791b.chunk.js.map",
+    "main.js": "/numerology/static/js/main.5ed87dda.chunk.js",
+    "main.js.map": "/numerology/static/js/main.5ed87dda.chunk.js.map",
     "runtime~main.js": "/numerology/static/js/runtime~main.8f780c8f.js",
     "runtime~main.js.map": "/numerology/static/js/runtime~main.8f780c8f.js.map",
     "static/js/2.f77c50b8.chunk.js": "/numerology/static/js/2.f77c50b8.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.31c88699.chunk.js": "/numerology/static/js/3.31c88699.chunk.js",
     "static/js/3.31c88699.chunk.js.map": "/numerology/static/js/3.31c88699.chunk.js.map",
     "index.html": "/numerology/index.html",
-    "precache-manifest.ef338c87df78bcab8c78c7bb6e587415.js": "/numerology/precache-manifest.ef338c87df78bcab8c78c7bb6e587415.js",
+    "precache-manifest.61b4b21914d946faa74c0e22ac04ccea.js": "/numerology/precache-manifest.61b4b21914d946faa74c0e22ac04ccea.js",
     "service-worker.js": "/numerology/service-worker.js",
     "static/css/main.a0090267.chunk.css.map": "/numerology/static/css/main.a0090267.chunk.css.map",
     "static/media/enflag.png": "/numerology/static/media/enflag.37560245.png",
