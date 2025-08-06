@@ -5,14 +5,30 @@ const tabelaNumeros = {
   S: 1, T: 2, U: 3, V: 4, W: 5, X: 6, Y: 7, Z: 8
 };
 
-function reduzir(num) {
-  if (num < 10) return num;
-  return reduzir(
-    num
+function reduzir(num){
+  while (num > 9) {
+    num = num
       .toString()
       .split("")
-      .reduce((acc, val) => acc + Number(val), 0)
-  );
+      .reduce((acc, val) => acc + Number(val), 0);
+  }
+  return num;
+}
+
+function reduzirComMestres(num) {
+  // Permitir 11, 22 e 33 como finais
+  if (num === 11 || num === 22 || num === 33) return num;
+
+  while (num > 9) {
+    num = num
+      .toString()
+      .split("")
+      .reduce((acc, val) => acc + Number(val), 0);
+
+    if (num === 11 || num === 22 || num === 33) return num;
+  }
+
+  return num;
 }
 
 // Calcula número de vida (data nascimento)
@@ -35,7 +51,7 @@ export function calcularNumeroDeVida(data) {
       .split("")
       .reduce((acc, val) => acc + Number(val), 0);
 
-  return reduzir(soma);
+  return reduzirComMestres(soma);
 }
 
 // Função auxiliar para converter nome para números
@@ -58,7 +74,7 @@ export function calcularNumeroDaPersonalidade(nome) {
 
   const soma = consoantes.reduce((acc, letra) => acc + tabelaNumeros[letra], 0);
 
-  return reduzir(soma);
+  return reduzirComMestres(soma);
 }
 
 // Número da Alma: soma das vogais reduzida
@@ -72,7 +88,7 @@ export function calcularNumeroDaAlma(nome) {
 
   const soma = vogais.reduce((acc, letra) => acc + tabelaNumeros[letra], 0);
 
-  return reduzir(soma);
+  return reduzirComMestres(soma);
 }
 
 // Ano pessoal básico: soma dia + mês + ano atual, reduzido
@@ -134,7 +150,7 @@ export function calcularNumerosKarmicos(nome) {
     return n;
   };
 
-  const numeroFinal = reduzir(soma);
+  const numeroFinal = reduzirComMestres(soma);
 
   // Se a soma original for um número kármico, devolve essa informação
   if (numerosKarmicos.includes(numeroAntesDeReduzir)) {

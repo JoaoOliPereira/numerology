@@ -19,7 +19,10 @@ const explanations = {
       6: "Responsabilidade, amor e cuidado com os outros.",
       7: "Espiritualidade, introspecção e sabedoria.",
       8: "Ambição, poder e sucesso material.",
-      9: "Compaixão, altruísmo e humanitarismo."
+      9: "Compaixão, altruísmo e humanitarismo.",
+      11: "MESTRE - Intuição elevada, inspiração e idealismo.",
+      22: "MESTRE - Construção, liderança prática e realização em grande escala.",
+      33: "MESTRE - Amor universal, cura e altruísmo espiritual."
     },
     deep: {
         1: "Você carrega a vibração do pioneiro, alguém que veio ao mundo para abrir caminhos, liderar e afirmar sua individualidade. A sua missão é desenvolver coragem, iniciativa e independência, mesmo diante da solidão ou resistência externa. A jornada do 1 é aprender a confiar em sua voz interior e não depender da aprovação alheia. Você é chamado a inspirar pelo exemplo — com força, determinação e criatividade. Assim como o sol brilha sozinho, você veio brilhar sem pedir permissão.",
@@ -30,7 +33,10 @@ const explanations = {
         6: "Você é o guardião do amor e do cuidado. A vibração do 6 é profundamente ligada à família, ao lar, à beleza e ao serviço. A sua missão é trazer equilíbrio e cura emocional onde houver dor, oferecendo acolhimento com generosidade. O seu desafio é não se sobrecarregar tentando salvar a todos. Quando aprende a amar sem se anular, torna-se um verdadeiro canal de cura. A sua alma vibra com o dom de fazer o mundo um lugar mais terno e harmonioso.",
         7: "Você é o buscador da verdade — alguém com profundo senso de introspecção, mistério e espiritualidade. O número 7 traz uma missão de autoconhecimento, análise e conexão com o sagrado. Pode-se sentir diferente ou incompreendido, mas isso é parte do seu chamado. Você é um construtor de pontes entre o visível e o invisível. A sua alma anseia por significado, não por superficialidade. Quando se conecta à intuição e ao silêncio interior, encontra sabedoria divina.",
         8: "Você é o manifestador do equilíbrio entre poder e consciência. O número 8 carrega uma missão de realização material, mas com ética, responsabilidade e senso de justiça. O seu desafio é usar a ambição como ferramenta de evolução, e não de dominação. Com liderança natural, você veio para construir impérios — mas só prospera de verdade quando entende que o verdadeiro poder nasce do espírito, e não do ego. Você é chamado a liderar com propósito e integridade.",
-        9: "Você é o servidor universal — uma alma antiga com vocação para a compaixão, a entrega e o amor incondicional. O número 9 carrega a missão de curar feridas coletivas através da empatia, da arte e do exemplo. O seu coração é vasto e sente o sofrimento alheio como se fosse seu. O seu caminho é o do perdão, do desapego e da generosidade. Ao aprender a doar de si sem se sacrificar, torna-se uma fonte de luz para todos ao seu redor. A sua alma é um reflexo do amor universal."
+        9: "Você é o servidor universal — uma alma antiga com vocação para a compaixão, a entrega e o amor incondicional. O número 9 carrega a missão de curar feridas coletivas através da empatia, da arte e do exemplo. O seu coração é vasto e sente o sofrimento alheio como se fosse seu. O seu caminho é o do perdão, do desapego e da generosidade. Ao aprender a doar de si sem se sacrificar, torna-se uma fonte de luz para todos ao seu redor. A sua alma é um reflexo do amor universal.",
+        11: "Você é o visionário iluminado, alguém com uma conexão espiritual intensa e uma sensibilidade que transcende o comum. A missão do número 11 envolve inspirar e despertar os outros, trazendo luz e esperança onde há escuridão. Você sente a responsabilidade de canalizar ideias elevadas e transformar intuição em ação concreta. No entanto, seu desafio é equilibrar a intensidade emocional e evitar a ansiedade, aprendendo a confiar no fluxo divino e na sua sabedoria interior.",
+        22: "Você é o mestre construtor, com a capacidade de transformar sonhos grandiosos em realidade palpável. A vibração do 22 traz a força de um líder prático e visionário, capaz de realizar grandes feitos que beneficiam muitas pessoas. A sua missão é equilibrar ambição com humildade, traduzindo ideias espirituais em estruturas sólidas e duradouras. Você tem o potencial de deixar um legado, mas deve aprender a não se sobrecarregar nem se prender a expectativas externas.",
+        33: "Você é o mestre professor, carregando uma energia de amor incondicional e serviço ao próximo em seu grau máximo. A missão do número 33 é curar, educar e elevar a consciência coletiva através do exemplo e da compaixão profunda. Sua alma é um canal de cura, e você é chamado a inspirar sacrifício consciente sem perder sua própria luz. Seu desafio é manter o equilíbrio emocional e espiritual, encontrando força no amor próprio para irradiar essa luz ao mundo."
       }
     },
 
@@ -44,7 +50,10 @@ const explanations = {
       6: "Desejo de cuidar dos outros.",
       7: "Busca por conhecimento interior.",
       8: "Desejo de sucesso e realização.",
-      9: "Chamado à compaixão e serviço ao próximo."
+      9: "Chamado à compaixão e serviço ao próximo.",
+      11: "MESTRE - Alma intuitiva, sensível e inspiradora, buscando elevar a consciência.",
+      22: "MESTRE - Alma prática e visionária, focada em construir legados duradouros.",
+      33: "MESTRE - Alma compassiva e amorosa, dedicada ao serviço e à cura."
     },
     deep: {
         1: "No íntimo, a sua alma clama por liberdade e expressão da sua individualidade. Você deseja ser reconhecido pela sua originalidade e capacidade de liderar. Existe um anseio profundo por autonomia e pela chance de fazer as coisas do seu jeito, sem interferência externa. Ao atender esse chamado, você encontra paz e propósito.",
@@ -55,7 +64,10 @@ const explanations = {
         6: "A alma deseja cuidar, servir e proteger. Existe um chamado interno para oferecer amor, estabilidade e cura às pessoas ao redor. A sua realização vem da troca afetiva e da harmonia nos lares e vínculos. Mas atenção: aprender a se cuidar antes de cuidar dos outros é parte essencial da sua jornada.",
         7: "A sua alma deseja recolhimento, silêncio e contemplação. Existe um anseio por compreender os mistérios da existência, mergulhar no invisível e buscar conexão espiritual profunda. Você encontra paz quando está só, refletindo e estudando. Mas também deve permitir que essa sabedoria chegue aos outros.",
         8: "O desejo da alma é realizar, conquistar e deixar marca no mundo. Você se sente energizado por metas, desafios e pelo uso eficaz dos recursos materiais. Mas a alma também anseia por reconhecimento verdadeiro — aquele que vem da integridade. Prosperar com propósito é a sua via de realização.",
-        9: "A sua alma deseja servir, amar e transformar. Existe uma sensibilidade aguçada à dor alheia e um impulso por ajudar, mesmo quando ninguém vê. O amor universal pulsa forte em você. Quando se entrega a causas maiores, encontra a sua verdadeira paz. Mas deve cuidar para não esquecer de si mesmo no processo."
+        9: "A sua alma deseja servir, amar e transformar. Existe uma sensibilidade aguçada à dor alheia e um impulso por ajudar, mesmo quando ninguém vê. O amor universal pulsa forte em você. Quando se entrega a causas maiores, encontra a sua verdadeira paz. Mas deve cuidar para não esquecer de si mesmo no processo.",
+        11: "MESTRE - A sua alma é profundamente conectada ao plano espiritual, trazendo uma intuição aguçada e uma missão de inspirar os outros através da luz e da esperança. Você sente um chamado para transcender o ordinário, enfrentando desafios emocionais que fortalecem sua sensibilidade e sabedoria interior. É fundamental aprender a confiar no seu potencial espiritual sem se perder na ansiedade.",
+        22: "MESTRE - Você carrega uma alma com a capacidade rara de transformar ideias elevadas em realidades concretas. Sua missão é construir estruturas sólidas, tanto internas quanto externas, que beneficiem a coletividade. O equilíbrio entre ambição e humildade é o caminho para a realização plena, assim como o cuidado para não se sobrecarregar com responsabilidades que possam esgotar sua energia.",
+        33: "MESTRE - A sua alma traz uma vibração de amor incondicional e serviço profundo. Você está aqui para curar e elevar o coletivo, assumindo um papel de mestre que lidera pelo exemplo e pela compaixão. O desafio reside em manter seu próprio equilíbrio emocional enquanto oferece sua luz aos outros, cultivando amor próprio para sustentar essa missão grandiosa."
       }
     },
 
@@ -69,7 +81,10 @@ const explanations = {
       6: "Amável, cuidadoso e acolhedor.",
       7: "Reservado, pensativo e enigmático.",
       8: "Seguro, ambicioso e influente.",
-      9: "Generoso, empático e inspirador."
+      9: "Generoso, empático e inspirador.",
+      11: "MESTRE - Imagem de inspiração e sensibilidade, irradiando intuição e idealismo.",
+      22: "MESTRE - Presença de líder confiável e visionário, transmitindo força e estabilidade.",
+      33: "MESTRE - Aura de mestre amoroso e curador, mostrando dedicação e altruísmo."
     },
       deep: {
         1: "A sua presença transmite liderança, coragem e firmeza. As pessoas percebem você como alguém determinado, com opinião forte e postura de comando. Mesmo em silêncio, você impõe respeito. Isso pode atrair admiradores — e também opositores. O desafio é equilibrar autoconfiança com humildade.",
@@ -80,7 +95,10 @@ const explanations = {
         6: "Você irradia acolhimento e harmonia. A sua imagem é de alguém protetor, confiável e generoso. Pode ser percebido como uma figura maternal ou paternal, mesmo sem querer. Os outros se sentem seguros com sua presença. Mas é preciso cuidar para que isso não vire obrigação emocional.",
         7: "A sua aura é reservada, misteriosa, contemplativa. Mesmo sem palavras, transmite profundidade. Os outros podem vê-lo como sábio, estranho ou enigmático. A sua postura desperta curiosidade e respeito. Mas cuidado para que o distanciamento não se torne barreira afetiva.",
         8: "Você passa força, autoridade e magnetismo. A presença é marcante, muitas vezes associada a sucesso e ambição. Os outros o percebem como alguém que sabe o que quer e vai atrás. Isso inspira — e também intimida. Aprender a suavizar a rigidez fortalece seus vínculos.",
-        9: "Você transmite nobreza de alma. A sua presença inspira compaixão, sabedoria e generosidade. Há algo em seus olhos que fala de dor e cura, como se já tivesse vivido muitas vidas. Os outros se sentem tocados por você, mesmo sem saber explicar por quê. A sua energia é cura silenciosa."
+        9: "Você transmite nobreza de alma. A sua presença inspira compaixão, sabedoria e generosidade. Há algo em seus olhos que fala de dor e cura, como se já tivesse vivido muitas vidas. Os outros se sentem tocados por você, mesmo sem saber explicar por quê. A sua energia é cura silenciosa.",
+        11: "MESTRE - Você projeta uma personalidade que chama atenção pela sua energia vibrante e sensível. Sua presença inspira confiança, mesmo que por dentro você sinta as dúvidas e a intensidade emocional que esse número traz. O desafio é harmonizar essa dualidade e usar sua influência para motivar e iluminar o caminho dos outros.",
+        22: "MESTRE - A sua personalidade se manifesta como a de alguém altamente capaz, pragmático e ao mesmo tempo visionário. Você é visto como um construtor de confiança, alguém que traz soluções concretas e visão de futuro. É importante equilibrar essa imagem forte com flexibilidade e autocuidado para evitar o desgaste.",
+        33: "MESTRE - Você aparece para o mundo como uma pessoa calorosa, dedicada e profundamente altruísta. Sua personalidade é magnética e acolhedora, refletindo seu desejo de ajudar e curar. O desafio é manter essa imagem autêntica sem se perder nas expectativas alheias, encontrando sempre tempo para nutrir sua própria essência."
       }
     },
 
@@ -161,7 +179,10 @@ const explanations = {
       6: "Responsibility, love, and care for others.",
       7: "Spirituality, introspection, and wisdom.",
       8: "Ambition, power, and material success.",
-      9: "Compassion, altruism, and humanitarianism."
+      9: "Compassion, altruism, and humanitarianism.",
+      11: "MASTER - High intuition, inspiration, and idealism.",
+      22: "MASTER - Builder, practical leadership, and large-scale achievement.",
+      33: "MASTER - Teacher, unconditional love, healing, and altruism."
       },
       deep: {
       1: "You carry the vibration of a pioneer, someone who came to this world to lead and assert their individuality. Your mission is to develop courage, initiative, and independence, even when facing loneliness or external resistance. Your journey is about trusting your inner voice and not relying on outside approval. You are meant to inspire through example—with strength, determination, and creativity. Like the sun shines alone, you are here to shine without asking for permission.",
@@ -172,8 +193,11 @@ const explanations = {
       6: "You are the guardian of love and care. The vibration of 6 is deeply connected to family, home, beauty, and service. Your mission is to bring emotional healing where there is pain, offering shelter with generosity. Your challenge is not to overload yourself trying to save everyone. When you learn to love without self-neglect, you become a true channel of healing. Your soul resonates with the gift of making the world more tender and harmonious.",
       7: "You are the seeker of truth—with a deep sense of introspection, mystery, and spirituality. Number 7 carries a mission of self-knowledge, analysis, and sacred connection. You may feel different or misunderstood, but that’s part of your calling. You are a bridge between the visible and invisible. Your soul yearns for meaning, not superficiality. When connected to intuition and inner silence, you find divine wisdom.",
       8: "You are the manifestor of balance between power and consciousness. Number 8 carries a mission of material achievement—but with ethics, responsibility, and a sense of justice. Your challenge is to use ambition as a tool for growth, not domination. With natural leadership, you are here to build empires—but you only truly prosper when you understand that real power comes from spirit, not ego. You are called to lead with purpose and integrity.",
-      9: "You are the universal server—an old soul with a vocation for compassion, service, and unconditional love. Number 9 brings a mission to heal collective wounds through empathy, art, and example. Your heart is vast and feels others’ pain as your own. Your path is one of forgiveness, detachment, and generosity. When you learn to give without self-sacrifice, you become a source of light to everyone around you. Your soul reflects universal love."
-      }
+      9: "You are the universal server—an old soul with a vocation for compassion, service, and unconditional love. Number 9 brings a mission to heal collective wounds through empathy, art, and example. Your heart is vast and feels others’ pain as your own. Your path is one of forgiveness, detachment, and generosity. When you learn to give without self-sacrifice, you become a source of light to everyone around you. Your soul reflects universal love.",
+      11: "MASTER - You are the enlightened visionary, someone with an intense spiritual connection and sensitivity that transcends the ordinary. Your mission involves inspiring and awakening others, bringing light and hope where there is darkness. You feel responsible for channeling elevated ideas and turning intuition into concrete action. However, your challenge is to balance emotional intensity and avoid anxiety, learning to trust the divine flow and your inner wisdom.",
+      22: "MASTER - You are the master builder with the ability to transform grand dreams into tangible reality. The vibration of 22 carries the strength of a practical and visionary leader capable of accomplishing great feats that benefit many. Your mission is to balance ambition with humility, translating spiritual ideas into solid, lasting structures. You have the potential to leave a legacy but must learn not to overburden yourself or get caught in external expectations.",
+      33: "MASTER - You are the master teacher carrying an energy of unconditional love and service at its highest level. The mission of 33 is to heal, educate, and elevate collective consciousness through example and deep compassion. Your soul is a healing channel, called to inspire conscious sacrifice without losing your own light. Your challenge is to maintain emotional and spiritual balance, finding strength in self-love to radiate this light to the world."
+    }
     },
     "soulNumber": {
       simple: {
@@ -185,7 +209,10 @@ const explanations = {
         6: "Desire to care for others.",
         7: "Search for inner knowledge.",
         8: "Desire for success and achievement.",
-        9: "Calling for compassion and service."
+        9: "Calling for compassion and service.",
+        11: "MASTER - An intuitive, sensitive, and inspiring soul seeking to raise consciousness.",
+        22: "MASTER - A practical and visionary soul focused on building lasting legacies.",
+        33: "MASTER - A compassionate and loving soul dedicated to service and healing."
       },
       deep: {
         1: "Deep within, your soul longs for freedom and the expression of your individuality. You want to be recognized for your originality and ability to lead. There's a strong desire for autonomy and to do things your own way. When you follow that call, you find peace and purpose.",
@@ -196,7 +223,10 @@ const explanations = {
         6: "Your soul desires to care, serve, and protect. There's an internal calling to offer love, stability, and healing to those around you. You find fulfillment in emotional exchanges and harmony in homes and relationships. But remember: learning to care for yourself first is part of your journey.",
         7: "Your soul desires retreat, silence, and contemplation. There is a longing to understand life’s mysteries, dive into the unseen, and seek spiritual connection. You find peace in solitude, reflection, and study. But you must also allow that wisdom to reach others.",
         8: "Your soul desires to achieve, conquer, and leave a mark on the world. You feel energized by goals, challenges, and efficient use of material resources. But your soul also craves true recognition—the kind that comes from integrity. Prosperity with purpose is your path to fulfillment.",
-        9: "Your soul desires to serve, love, and transform. There’s a heightened sensitivity to others' pain and an urge to help, even when unseen. Universal love beats strongly in you. When you devote yourself to greater causes, you find peace. But take care not to forget yourself in the process."
+        9: "Your soul desires to serve, love, and transform. There’s a heightened sensitivity to others' pain and an urge to help, even when unseen. Universal love beats strongly in you. When you devote yourself to greater causes, you find peace. But take care not to forget yourself in the process.",
+        11: "Your soul is deeply connected to the spiritual realm, bringing sharp intuition and a mission to inspire others through light and hope. You feel called to transcend the ordinary, facing emotional challenges that strengthen your sensitivity and inner wisdom. It is essential to learn to trust your spiritual potential without getting lost in anxiety.",
+        22: "You carry a soul with the rare ability to transform lofty ideas into concrete realities. Your mission is to build solid structures, both internal and external, that benefit the collective. Balancing ambition with humility is the path to full realization, as is taking care not to overburden yourself with responsibilities that may drain your energy.",
+        33: "Your soul carries a vibration of unconditional love and deep service. You are here to heal and uplift the collective, taking on the role of a master who leads by example and compassion. The challenge lies in maintaining your emotional balance while offering your light to others, cultivating self-love to sustain this grand mission."  
       }
     }, 
     "personalityNumber": {
@@ -209,7 +239,10 @@ const explanations = {
         6: "Comes across as caring, protective, and warm.",
         7: "Seen as mysterious, intellectual, and reserved.",
         8: "Projects authority, ambition, and confidence.",
-        9: "Appears compassionate, wise, and humanitarian."
+        9: "Appears compassionate, wise, and humanitarian.",
+        11: "MASTER - An image of inspiration and sensitivity, radiating intuition and idealism.",
+        22: "MASTER - The presence of a reliable and visionary leader, conveying strength and stability.",
+        33: "MASTER - An aura of a loving teacher and healer, showing dedication and altruism."
       },
       deep: {
         1: "You are perceived as a natural leader—strong, assertive, and confident. People tend to admire your independence and determination. There's a certain boldness in your presence that inspires respect. Your challenge is not to seem arrogant or overly competitive. When balanced, your image becomes one of authentic strength.",
@@ -220,7 +253,10 @@ const explanations = {
         6: "You emanate love, care, and a nurturing presence. People see you as someone they can turn to for emotional support and guidance. You may be drawn to healing or artistic roles. Your challenge is not to assume too much responsibility for others. When healthy, your presence brings comfort and beauty.",
         7: "You’re seen as enigmatic, introspective, and wise. There’s a mystique around you that invites curiosity. People sense your depth, even if they don’t fully understand you. The challenge is not to isolate yourself emotionally. When integrated, your presence becomes quietly powerful and deeply inspiring.",
         8: "You project ambition, control, and leadership. Others may perceive you as someone who’s goal-oriented and highly capable. There’s strength in your posture and clarity in your presence. The challenge is to not come across as intimidating or emotionally distant. When balanced, you command respect with grace.",
-        9: "You radiate compassion, wisdom, and generosity. People see you as someone with a big heart and humanitarian outlook. You carry an aura of kindness that transcends superficial interaction. Your challenge is to protect your energy. When centered, your personality uplifts and elevates everyone around you."
+        9: "You radiate compassion, wisdom, and generosity. People see you as someone with a big heart and humanitarian outlook. You carry an aura of kindness that transcends superficial interaction. Your challenge is to protect your energy. When centered, your personality uplifts and elevates everyone around you.",
+        11: "MASTER - You project a personality that draws attention with its vibrant and sensitive energy. Your presence inspires confidence, even if inside you feel the doubts and emotional intensity that this number brings. The challenge is to harmonize this duality and use your influence to motivate and illuminate others’ paths.",
+        22: "MASTER - Your personality manifests as someone highly capable, pragmatic, and at the same time visionary. You are seen as a builder of trust, someone who brings concrete solutions and a future vision. It is important to balance this strong image with flexibility and self-care to avoid burnout.",
+        33: "MASTER - You appear to the world as a warm, dedicated, and deeply altruistic person. Your personality is magnetic and welcoming, reflecting your desire to help and heal. The challenge is to maintain this authentic image without losing yourself in others’ expectations, always finding time to nurture your own essence."
       }
     },
     "personalYear": {
@@ -316,8 +352,6 @@ const tipoPorId = {
     en: "karmicNumbers"
   }
 };
-
-
 
 export function getAllDetailedExplanations({ name, birthDate,language}) {
   const numeroVida = calcularNumeroDeVida(birthDate);
