@@ -139,17 +139,6 @@ export function calcularNumerosKarmicos(nome) {
   // Salva valor antes de reduzir
   const numeroAntesDeReduzir = soma;
 
-  // Reduz o número até obter 1–9 (exceto 11/22/33 se quiser manter mestres)
-  const reduzir = (n) => {
-    while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
-      n = n
-        .toString()
-        .split("")
-        .reduce((acc, digit) => acc + parseInt(digit), 0);
-    }
-    return n;
-  };
-
   const numeroFinal = reduzirComMestres(soma);
 
   // Se a soma original for um número kármico, devolve essa informação
